@@ -8,7 +8,6 @@ import java.net.Socket;
 import com.yychat.model.Message;
 import com.yychat.model.User;
 
-
 public class ClientConnetion {
 
 	public static Socket s;//静态成员变量
@@ -29,6 +28,7 @@ public class ClientConnetion {
 			//把字节输入流对象包装成对象输入流
 			oos=new ObjectOutputStream(s.getOutputStream());
 			oos.writeObject(user);
+			System.out.println("发送User:用户名为"+user.getUserName()+"密码为"+user.getPassWord());
 				
 			ObjectInputStream ois=new ObjectInputStream(s.getInputStream());
 			mess=(Message)ois.readObject();
