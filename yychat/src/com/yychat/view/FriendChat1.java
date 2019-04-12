@@ -1,4 +1,4 @@
-/*package com.yychat.view;
+package com.yychat.view;
 
 import java.awt.Color;
 import java.awt.event.ActionEvent;
@@ -13,7 +13,7 @@ import javax.swing.*;
 import com.yychat.controller.ClientConnetion;
 import com.yychat.model.Message;
 
-public class FriendChat extends JFrame implements ActionListener,Runnable{//只允许单继承,但是可以实现多接口
+public class FriendChat1 extends JFrame implements ActionListener{//只允许单继承,但是可以实现多接口
 
 	JScrollPane jsp;
 	JTextArea jta;
@@ -25,7 +25,7 @@ public class FriendChat extends JFrame implements ActionListener,Runnable{//只允
 	String sender;
 	String receiver;
 	
-	public FriendChat(String sender,String receiver){
+	public FriendChat1(String sender,String receiver){
 		this.sender=sender;
 		this.receiver=receiver;
 		
@@ -50,7 +50,7 @@ public class FriendChat extends JFrame implements ActionListener,Runnable{//只允
 	}
 	
 	public static void main(String[] args) {
-		FriendChat friendChat=new FriendChat("1","2");
+		FriendChat1 friendChat=new FriendChat1("1","2");
 
 	}
 
@@ -74,32 +74,16 @@ public class FriendChat extends JFrame implements ActionListener,Runnable{//只允
 				oos.writeObject(mess);
 				
 				//是不是在这里接收？
-				ObjectInputStream ois=new ObjectInputStream(ClientConnetion.s.getInputStream());
+				/*ObjectInputStream ois=new ObjectInputStream(ClientConnetion.s.getInputStream());
 				mess=(Message)ois.readObject();
 				jta.append(mess.getSender()+"对"+mess.getReceiver()+"说："+mess.getContent()+"\r\n");
-				
+				*/
 			} catch (IOException e) {
 				e.printStackTrace();
 			}			
 		}		
 	}
-
-	@Override
-	public void run() {
-		ObjectInputStream ois;
-		Message mess;
-		while(true){
-			try {
-				//接收服务器转发过来的Message
-				Socket s=(Socket)ClientConnetion.hmSocket.get(sender);
-				ois = new ObjectInputStream(s.getInputStream());
-				mess=(Message)ois.readObject();//等待Server发送Message,阻塞
-				jta.append(mess.getSender()+"对"+mess.getReceiver()+"说："+mess.getContent()+"\r\n");
-				
-			} catch (IOException | ClassNotFoundException e) {
-				e.printStackTrace();
-			}
-		}				
+	public void appendJta(String chatMessageString){
+		jta.append(chatMessageString+"\r\n");
 	}
 }
-*/
