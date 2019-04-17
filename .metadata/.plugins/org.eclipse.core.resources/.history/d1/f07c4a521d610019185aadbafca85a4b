@@ -41,7 +41,8 @@ public class StartServer {
 					}
 					else{
 						mess.setMessageType(Message.message_LoginFailure);//验证不通过
-					}				
+					}
+				
 					ObjectOutputStream oos=new ObjectOutputStream(s.getOutputStream());
 					oos.writeObject(mess);
 				
@@ -58,7 +59,15 @@ public class StartServer {
 								
 			} catch (IOException | ClassNotFoundException e) {
 				e.printStackTrace();
-			}	
-		}
+			}
+	
+	}
+	
+	
+	public static void main(String[] args) {
+		
+
+	}
+
 }
 
