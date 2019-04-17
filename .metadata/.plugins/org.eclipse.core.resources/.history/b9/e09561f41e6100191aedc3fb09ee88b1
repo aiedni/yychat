@@ -14,7 +14,7 @@ public class StartServer {
 	ServerSocket ss;
 	Socket s;
 	
-	public static HashMap hmSocket=new HashMap<String,Socket>();//范型，通用类
+	public HashMap hmSocket=new HashMap<String,Socket>();//范型，通用类
 	String userName;
 	public StartServer(){
 			try {
