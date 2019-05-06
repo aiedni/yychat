@@ -2,9 +2,11 @@
 <section name="Workbench">
 	<section name="ExternalProjectImportWizard">
 		<item value="false" key="WizardProjectsImportPage.STORE_NESTED_PROJECTS"/>
-		<item value="true" key="WizardProjectsImportPage.STORE_COPY_PROJECT_ID"/>
+		<item value="false" key="WizardProjectsImportPage.STORE_COPY_PROJECT_ID"/>
 		<item value="false" key="WizardProjectsImportPage.STORE_ARCHIVE_SELECTED"/>
 		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
+			<item value="C:\yychat\yychatServer"/>
+			<item value="C:\yychat\yychatClient"/>
 			<item value="C:\Users\admin\Desktop\新建文件夹\yychatServer"/>
 			<item value="C:\Users\admin\Desktop\新建文件夹\yychat"/>
 		</list>

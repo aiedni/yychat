@@ -43,8 +43,8 @@ public class ServerReceiverThread extends Thread{//必须要有run()方法
 				//第二步
 				if(mess.getMessageType().equals(Message.message_RequestOnlineFriend)){
 					//首先要拿到在线好友信息
-					Set friendSet=StartServer.hmSocket.keySet();
-					Iterator it=friendSet.iterator();
+					Set friendSet=StartServer.hmSocket.keySet();//得到好友名字集合
+					Iterator it=friendSet.iterator();//迭代器，目的是对friendSet集合中的元素进行遍历
 					String friendName;
 					String friendString="";
 					while(it.hasNext()){//判断还有没有下一个好友
